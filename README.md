@@ -1,112 +1,115 @@
-AWS Cloud Security Project – Final Year Project
-Secure Multi-Tier AWS Architecture with Shadow Identity Detection
+🚀 AWS Cloud Security Project – Final Year Project
+Secure Multi-Tier AWS Architecture & Shadow Identity Detection System
+<div align="center">
 
-This repository contains the complete implementation, documentation, and automation code for building a secure AWS environment, detecting shadow identities, and enforcing IAM governance.
+🛡️ Cloud Security • ☁️ AWS Architecture • 👤 Identity Governance • 🔍 Shadow Account Detection
 
-🔒 Project Objective
+</div>
+📌 📚 Project Overview
 
-Build a secure, production-grade AWS environment with:
+This project implements a production-grade secure AWS environment focusing on:
 
-Custom VPC Design
+Zero-Trust Identity Architecture
 
-Public + Private Subnet Architecture
+VPC Network Segmentation
 
-IAM Hardening & Role-Based Access Control
+IAM Hardening
 
-EC2 Hardening & EBS Encryption
+Shadow Identity Detection
 
-CloudTrail + CloudWatch Monitoring
+EC2 Instance Hardening
 
-Shadow Identity Detection Script
+S3 & CloudTrail Monitoring
 
-S3 Permission Restriction Policies
+Automated Auditing Scripts
 
-Real-World Security Best Practices
+Goal: Build a security-focused cloud infrastructure following AWS Well-Architected & industry best practices.
 
-🧩 Project Components
-1️⃣ Secure VPC Architecture
+🧱 🔒 1. Secure VPC Architecture
+aws-configurations/VPC/
+
+Contains:
 
 Custom VPC (10.0.0.0/16)
 
-Public Subnet for NAT Gateway
+Public & Private Subnets
 
-Private Subnet for EC2
+NAT Gateway
 
-Internet Gateway (IGW)
+Internet Gateway
 
-Route Tables + Associations
+Route Tables
 
-📁 Folder: aws-configurations/VPC/
+Network Isolation Design
 
-2️⃣ IAM Architecture
+👥 🔑 2. Identity & Access Management (IAM)
+aws-configurations/IAM-Users/
+aws-configurations/IAM-Roles/
+aws-configurations/Policies/
 
-Admin User with custom policy
+Includes:
 
-Restricted User (Least privilege)
+Admin User (Scoped Admin Policy)
+
+Restricted User
 
 Audit Role
 
-S3 Restricted Read Policy
+S3 Restricted Policy
 
-MFA Enforcement
+MFA Enforced
 
-📁 Folder: aws-configurations/IAM-Users/
-📁 Folder: aws-configurations/Policies/
+Access Key Governance
 
-3️⃣ EC2 Instance Hardening
+Least Privilege Architecture
+
+💻 🛠️ 3. EC2 Instance Hardening
+aws-configurations/EC2/
+scripts/ec2-hardening.sh
+
+Hardening Measures:
 
 Amazon Linux 2023
 
-Security Group (SSH + HTTP only)
+gp3 EBS Encryption
 
-EBS Volume with Encryption
+Fail2Ban
 
-CloudWatch Agent installation
+SSH Key Authentication
 
-Log streaming
+CloudWatch Logs Integration
 
-📁 Folder: aws-configurations/EC2/
-📁 Folder: scripts/ec2-hardening.sh
+OS-Level Security Enhancements
 
-4️⃣ Monitoring & Logging
+📡 📊 4. Monitoring & Logging
+aws-configurations/CloudTrail/
+aws-configurations/CloudWatch/
 
-CloudTrail enabled
+Monitoring Setup:
 
-CloudWatch Alarms
+CloudTrail (ALL regions)
 
-Unauthorised API call alerts
+CloudWatch Alerts
 
-Root login alerts
+Unauthorized API alarm
 
-📁 Folder: aws-configurations/CloudTrail/
-📁 Folder: aws-configurations/CloudWatch/
+Root login alarm
 
-5️⃣ Shadow Identity Detection
+IAM misuse alerts
 
-A Python script that:
+JSON log formatting
 
-Detects IAM users not used for 90+ days
+👤 🕵️‍♂️ 5. Shadow Identity Detection System
+scripts/shadow-identity-detection.py
 
-Detects unused access keys
+Detects:
 
-Detects stale IAM roles
+Unused IAM Users
 
-Alerts using CloudWatch
+Unused Access Keys
 
-📁 Folder: scripts/shadow-identity-detection.py
+Stale Roles
 
-6️⃣ Documentation
+No-MFA Users
 
-Stage 1, 2, 3 Reports
-
-IEEE Research Paper
-
-Final Presentation
-
-📁 Folder: documentation/
-
-🏗️ Project Architecture Diagram
-
-Place your main diagram here:
-
-📁 Folder: architecture-diagrams/architecture.png
+Suspicious Accounts
